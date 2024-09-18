@@ -11,15 +11,16 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            font-family: 'Montserrat', sans-serif; /* Usa il nuovo font */
+            font-family: 'Montserrat', sans-serif; /* Assicurati che il font sia corretto */
             background-color: #f0f0f0;
             color: #333;
             margin: 0;
         }
         .message {
-            font-size: 3em;
+            font-size: 4em; /* Aumenta la dimensione per testare l'effetto del font */
             animation: scaleUpDown 2s infinite;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Aggiungi un'ombra al testo per un effetto più interessante */
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3); /* Maggiore effetto di ombra */
+            font-weight: 700; /* Usa il peso 700 per un font più spesso */
         }
         @keyframes scaleUpDown {
             0%, 100% { transform: scale(1); }
@@ -28,12 +29,12 @@
         /* Media query per schermi più piccoli */
         @media (max-width: 600px) {
             .message {
-                font-size: 2.5em;
+                font-size: 3em; /* Aumento della dimensione del testo per schermi piccoli */
             }
         }
         @media (max-width: 400px) {
             .message {
-                font-size: 2em;
+                font-size: 2.5em; /* Aumento per schermi molto piccoli */
             }
         }
     </style>
@@ -42,4 +43,3 @@
     <div class="message">DOPO OH</div>
 </body>
 </html>
-
