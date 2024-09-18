@@ -12,33 +12,51 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Gradient di sfondo */
+            background: linear-gradient(135deg, #ff7e5f, #feb47b, #ff8c00, #f5a623); /* Gradiente dinamico */
+            background-size: 400% 400%;
+            animation: gradientAnimation 10s ease infinite;
             font-family: 'Montserrat', sans-serif;
-            color: #fff; /* Colore del testo per contrastare con lo sfondo */
             overflow: hidden;
         }
+
         .message {
             font-size: 4em;
-            animation: scaleUpDown 2s infinite, fadeInOut 5s infinite; /* Animazioni aggiuntive */
-            text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6); /* Maggiore effetto di ombra */
+            color: #000; /* Colore del testo */
+            animation: scaleUpDown 2s infinite, fadeInOut 5s infinite;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 255, 255, 0.8); /* Effetto di luce */
             font-weight: 700;
-            letter-spacing: 2px; /* Spaziatura tra le lettere */
+            letter-spacing: 3px; /* Spaziatura tra le lettere */
             text-transform: uppercase; /* Trasforma il testo in maiuscolo */
+            transition: transform 0.3s ease, color 0.3s ease; /* Transizione per hover */
         }
+
+        .message:hover {
+            transform: scale(1.1); /* Effetto di zoom al passaggio del mouse */
+            color: #ff8c00; /* Colore del testo al passaggio del mouse */
+        }
+
         @keyframes scaleUpDown {
             0%, 100% { transform: scale(1); }
             50% { transform: scale(1.5); }
         }
+
         @keyframes fadeInOut {
             0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
+            50% { opacity: 0.6; }
         }
-        /* Media query per schermi più piccoli */
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 0%; }
+            50% { background-position: 100% 100%; }
+            100% { background-position: 0% 0%; }
+        }
+
         @media (max-width: 600px) {
             .message {
                 font-size: 3em;
             }
         }
+
         @media (max-width: 400px) {
             .message {
                 font-size: 2.5em;
