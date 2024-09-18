@@ -11,30 +11,37 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            font-family: 'Montserrat', sans-serif; /* Assicurati che il font sia corretto */
-            background-color: #f0f0f0;
-            color: #333;
             margin: 0;
+            background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Gradient di sfondo */
+            font-family: 'Montserrat', sans-serif;
+            color: #fff; /* Colore del testo per contrastare con lo sfondo */
+            overflow: hidden;
         }
         .message {
-            font-size: 4em; /* Aumenta la dimensione per testare l'effetto del font */
-            animation: scaleUpDown 2s infinite;
-            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3); /* Maggiore effetto di ombra */
-            font-weight: 700; /* Usa il peso 700 per un font più spesso */
+            font-size: 4em;
+            animation: scaleUpDown 2s infinite, fadeInOut 5s infinite; /* Animazioni aggiuntive */
+            text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6); /* Maggiore effetto di ombra */
+            font-weight: 700;
+            letter-spacing: 2px; /* Spaziatura tra le lettere */
+            text-transform: uppercase; /* Trasforma il testo in maiuscolo */
         }
         @keyframes scaleUpDown {
             0%, 100% { transform: scale(1); }
             50% { transform: scale(1.5); }
         }
+        @keyframes fadeInOut {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
         /* Media query per schermi più piccoli */
         @media (max-width: 600px) {
             .message {
-                font-size: 3em; /* Aumento della dimensione del testo per schermi piccoli */
+                font-size: 3em;
             }
         }
         @media (max-width: 400px) {
             .message {
-                font-size: 2.5em; /* Aumento per schermi molto piccoli */
+                font-size: 2.5em;
             }
         }
     </style>
