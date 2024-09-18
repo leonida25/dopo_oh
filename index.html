@@ -23,7 +23,7 @@
         .message {
             font-size: 5em;
             color: #000;
-            animation: scaleUpDown 3s infinite, fadeInOut 5s infinite, textGlow 1.5s infinite; /* Animazioni aggiuntive */
+            animation: scaleUpDown 4s infinite, fadeInOut 5s infinite, textGlow 1.5s infinite, rotate3D 6s infinite, vibration 0.1s infinite; /* Animazioni aggiuntive */
             text-shadow: 0 0 25px rgba(255, 255, 255, 0.9), 0 0 50px rgba(255, 255, 255, 0.9); /* Effetto di luce avanzato */
             font-weight: 700;
             letter-spacing: 4px; /* Spaziatura tra le lettere */
@@ -34,8 +34,11 @@
         }
 
         @keyframes scaleUpDown {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.5); }
+            0% { transform: scale(1) rotateX(0deg); }
+            25% { transform: scale(1.2) rotateX(10deg); }
+            50% { transform: scale(1.4) rotateX(20deg); }
+            75% { transform: scale(1.2) rotateX(10deg); }
+            100% { transform: scale(1) rotateX(0deg); }
         }
 
         @keyframes fadeInOut {
@@ -51,29 +54,4 @@
 
         @keyframes textGlow {
             0%, 100% { text-shadow: 0 0 25px rgba(255, 255, 255, 0.9), 0 0 50px rgba(255, 255, 255, 0.9); }
-            50% { text-shadow: 0 0 15px rgba(255, 255, 255, 0.7), 0 0 30px rgba(255, 255, 255, 0.7); }
-        }
-
-        .message:hover {
-            transform: scale(1.2); /* Effetto di zoom più pronunciato al passaggio del mouse */
-            color: #ff8c00; /* Colore del testo al passaggio del mouse */
-            text-shadow: 0 0 30px rgba(255, 255, 255, 1), 0 0 60px rgba(255, 255, 255, 1); /* Effetto di luce più forte */
-        }
-
-        @media (max-width: 600px) {
-            .message {
-                font-size: 4em;
-            }
-        }
-
-        @media (max-width: 400px) {
-            .message {
-                font-size: 3em;
-            }
-        }
-    </style>
-</head>
-<body>
-    <div class="message">DOPO OH</div>
-</body>
-</html>
+            50% { text-shadow: 0 0 15px rgba(255, 255, 255, 0.7
