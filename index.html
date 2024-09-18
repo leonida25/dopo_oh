@@ -22,7 +22,7 @@
         .message {
             font-size: 5em;
             color: #000;
-            animation: scaleUpDown 5s infinite;
+            animation: scaleContinuous 4s infinite;
             font-weight: 700;
             letter-spacing: 4px;
             text-transform: uppercase;
@@ -31,11 +31,10 @@
             z-index: 1;
         }
 
-        @keyframes scaleUpDown {
-            0%, 100% { transform: scale(1); }
-            25% { transform: scale(1.1); }
+        @keyframes scaleContinuous {
+            0% { transform: scale(1); }
             50% { transform: scale(1.2); }
-            75% { transform: scale(1.1); }
+            100% { transform: scale(1); }
         }
 
         @keyframes rainbowAnimation {
