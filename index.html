@@ -14,25 +14,23 @@
             margin: 0;
             background: linear-gradient(135deg, #ff7e5f, #feb47b, #ff8c00, #f5a623); /* Gradiente dinamico */
             background-size: 400% 400%;
-            animation: gradientAnimation 10s ease infinite;
+            animation: gradientAnimation 15s ease infinite; /* Gradiente animato più lento */
             font-family: 'Montserrat', sans-serif;
             overflow: hidden;
+            perspective: 1000px; /* Effetto parallax */
         }
 
         .message {
-            font-size: 4em;
-            color: #000; /* Colore del testo */
-            animation: scaleUpDown 2s infinite, fadeInOut 5s infinite;
-            text-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 255, 255, 0.8); /* Effetto di luce */
+            font-size: 5em;
+            color: #000;
+            animation: scaleUpDown 3s infinite, fadeInOut 5s infinite, textGlow 1.5s infinite; /* Animazioni aggiuntive */
+            text-shadow: 0 0 25px rgba(255, 255, 255, 0.9), 0 0 50px rgba(255, 255, 255, 0.9); /* Effetto di luce avanzato */
             font-weight: 700;
-            letter-spacing: 3px; /* Spaziatura tra le lettere */
+            letter-spacing: 4px; /* Spaziatura tra le lettere */
             text-transform: uppercase; /* Trasforma il testo in maiuscolo */
-            transition: transform 0.3s ease, color 0.3s ease; /* Transizione per hover */
-        }
-
-        .message:hover {
-            transform: scale(1.1); /* Effetto di zoom al passaggio del mouse */
-            color: #ff8c00; /* Colore del testo al passaggio del mouse */
+            transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease; /* Transizione per hover */
+            position: relative; /* Necessario per gli effetti di parallax */
+            z-index: 1;
         }
 
         @keyframes scaleUpDown {
@@ -51,15 +49,26 @@
             100% { background-position: 0% 0%; }
         }
 
+        @keyframes textGlow {
+            0%, 100% { text-shadow: 0 0 25px rgba(255, 255, 255, 0.9), 0 0 50px rgba(255, 255, 255, 0.9); }
+            50% { text-shadow: 0 0 15px rgba(255, 255, 255, 0.7), 0 0 30px rgba(255, 255, 255, 0.7); }
+        }
+
+        .message:hover {
+            transform: scale(1.2); /* Effetto di zoom più pronunciato al passaggio del mouse */
+            color: #ff8c00; /* Colore del testo al passaggio del mouse */
+            text-shadow: 0 0 30px rgba(255, 255, 255, 1), 0 0 60px rgba(255, 255, 255, 1); /* Effetto di luce più forte */
+        }
+
         @media (max-width: 600px) {
             .message {
-                font-size: 3em;
+                font-size: 4em;
             }
         }
 
         @media (max-width: 400px) {
             .message {
-                font-size: 2.5em;
+                font-size: 3em;
             }
         }
     </style>
